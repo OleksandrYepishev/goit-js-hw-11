@@ -57,7 +57,7 @@ class Timer {
       this.onTick(time);
     }
 
-    const startTime = userDate - 3*60*60*1000;
+    const startTime = userDate;
     this.isActive = true;
 
     this.intervalId = setInterval(() => {
