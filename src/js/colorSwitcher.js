@@ -7,18 +7,24 @@ const body = document.querySelector('body');
 startBtn.addEventListener('click', colorSwitherStart);
 stopBtn.addEventListener('click', colorSwitherStop);
 let timerId = null;
+topBtn.disabled = true;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
 
 function colorSwitherStart() {
-    timerId = setInterval(() => {
+  timerId = setInterval(() => {
+      body.style.backgroundColor = getRandomHexColor();
+  console.log(getRandomHexColor);
     ;
   }, 1000);
+  startBtn.disabled = true;
+  stopBtn.disabled = false;
 }
 
 function colorSwitherStop() {
     clearInterval(timerId);
-    body.style.backgroundColor = getRandomHexColor;
+  startBtn.disabled = false;
+  stopBtn.disabled = true;
 };
