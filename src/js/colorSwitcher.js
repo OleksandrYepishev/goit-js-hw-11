@@ -7,7 +7,7 @@ const body = document.querySelector('body');
 startBtn.addEventListener('click', colorSwitherStart);
 stopBtn.addEventListener('click', colorSwitherStop);
 let timerId = null;
-topBtn.disabled = true;
+stopBtn.disabled = true;
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -16,7 +16,7 @@ function getRandomHexColor() {
 function colorSwitherStart() {
   timerId = setInterval(() => {
       body.style.backgroundColor = getRandomHexColor();
-  console.log(getRandomHexColor);
+  
     ;
   }, 1000);
   startBtn.disabled = true;
